@@ -1,0 +1,33 @@
+{
+  "name": "openmetro-weather-access",
+  "version": "0.1.0",
+  "description": "Show weather information using express and OpenMetroApi",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "sass scss/custom.scss styles/custom.css",
+    "start": "nodemon index.js -w scripts"
+  },
+  "config": {
+    "updated": "2023-02-24"
+  },
+  "keywords": [
+    "express",
+    "bootstrap",
+    "OpenMetro",
+    "Helmet",
+    "pug"
+  ],
+  "author": "Yu TAKAHASHI",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "bootstrap": "^5.2.3",
+    "d3": "^7.8.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "nocache": "^3.0.4",
+    "pug": "^3.0.2",
+    "serve-favicon": "^2.5.0"
+  }
+}

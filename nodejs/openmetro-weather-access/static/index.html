@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' type='text/css' href='/styles/styles.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js' crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.20.11/babel.min.js" integrity="sha512-IApuVfIDFro2vyERRyRgOa2TruCtteN5T2m6KOJvjQuteZ5HWMoUXeReD/qAaM1UN2oJRZn+12ZK3P3uykRF8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.min.js" integrity="sha512-6i4FxVh0YbXCtxtqrFlG0H6FJRO4YQ5fyFH0JBdAAiqCt6/Q+jHMabMSC8FpESVSJZvnQ52dB2A8OD9SMk7buw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.min.js" integrity="sha512-I5GJQRKGdj2miDs8ComgARfiAQiZJo/43YasH22qtweoG+YRXLTDYegxC/vPgw/ERxRzww/F4l4+8UiMmI20sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script-->
+  </head>
+  <body>
+    <header>
+      <div><h1>Hello world</h1></div>
+    </header>
+    <main>
+      <div class='form-box'>
+	<form class='grid-form' method='POST' action='/api/hide-password'>
+	  <fieldset class='input-box'>
+	    <label for='city' id='city-label' class='city-label'>Your Name: </label>
+	    <select id='city' class='city-select' name='name' value='placeholder'></input>
+	    <label for='age' id='age-label' class='age-label'>Age: </label>
+	    <input type='number' id='age' class='age-num' name='age' value='18' min='18' max='65'></input>
+	    <button type='submit' id='submitBtn' class='grid-btn' value='submit'>SUBMIT</button>
+
+	    <!--script type='module' crossorigin='anonymous' src='/scripts/select.js'></script-->
+	  </fieldset>
+	</form>
+      </div>
+      <div>
+	<p id='msg'></p>
+      </div>
+      <div>
+	<script type='module' src='/scripts/hide_password.js'></script>
+	<script type='text/babel'>
+	  let domContainer = document.querySelector('#msg');
+	  let tag = document.createElement('div');
+	  let rootDiv = ReactDOM.createRoot(tag);
+
+	  const txt = document.querySelector('#city').getAttribute('value');
+	  const words = " Babel + React Rendering";
+	  const hello = <h1>Hello World {words} {typeof txt} {txt}</h1>;
+	  rootDiv.render(hello);
+	  domContainer.appendChild(tag);
+
+	  let doc = document.querySelector('main');
+	  let divtag = document.createElement('div');
+	  let rootDiv2 = ReactDOM.createRoot(divtag);
+	  
+/*	  fetch(url).then(resolve => {
+	      return resolve.json();
+	  }).then(resolve => {
+	      console.log(resolve);
+	      rootDiv2.render(<p>緯度: {resolve.latitude}, 経度: {resolve.longitude}</p>);
+	      doc.appendChild(divtag);
+	  }).catch(fail => {
+	      weatherResponse = fail;
+	  });*/
+//	  class Test extends React.Component{
+//	      render(){
+//		  return (
+//			  <div>
+//			  <p className='description'>Sample file for React, Babel, and so on.</p>
+//		      </div>);
+//	      }
+//	  }
+//	  rootDiv.render(<Test />);
+	</script>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

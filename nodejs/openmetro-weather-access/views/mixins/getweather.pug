@@ -1,0 +1,13 @@
+mixin getWeatherIcon(weather)
+  if weather=='sunny'
+    include ../weather-icons/sunny
+  else if weather == 'snowy'
+    include ../weather-icons/snowy
+  else if weather == 'rainy'
+    include ../weather-icons/rainy
+  else if weather == 'cloudy'
+    include ../weather-icons/cloudy
+  else if weather == 'moon'
+    include ../weather-icons/moon
+  else
+    p WeatherImage

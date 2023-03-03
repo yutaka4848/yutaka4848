@@ -1,0 +1,30 @@
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+$wicon-org-width: 829px;
+$wicon-org-height: 1280px;
+$wicon-width: $wicon-org-width * 0.2;
+$wicon-height: $wicon-org-height * 0.2;
+
+* {
+  font-family: 'Liberation Sans', sans-serif;
+}
+
+body {
+  background-color: $indigo-200;
+}
+
+.svg-size {
+  width: 20%;
+}
+
+.svg-shadow {
+  filter: drop-shadow(5px 5px 5px black);
+}
+
+#sunny {
+  // -webkit-clip-path: polygon(0px 0px, 829 / 2 px 0px,829 / 2 px 1280 / 3 px, 0px 1280 / 3 px);
+  // clip-path: polygon(0px 0px, calc($wicon-width / 1.4)  0px, calc($wicon-width / 1.4) calc($wicon-height /2.1), 0px calc($wicon-height /2.1));
+  fill: orangered;
+  stroke: orangered;
+}
+

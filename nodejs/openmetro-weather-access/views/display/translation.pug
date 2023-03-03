@@ -1,0 +1,13 @@
+mixin toJapanese(w)
+  if weather=='sunny'
+    | 晴
+  else if weather == 'snowy'
+    | 雪
+  else if weather == 'rainy'
+    | 雨
+  else if weather == 'cloudy'
+    | 曇
+  else if weather == 'moon'
+    | 月
+  else
+    | = weather
