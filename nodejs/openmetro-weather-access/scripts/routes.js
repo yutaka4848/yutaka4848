@@ -17,7 +17,6 @@ const pug = require('pug');
 
 const {WeatherApi} = require('./accessOpenMetro.js');
 const {WeatherPlots, sampleData} = require('./d3-plot.js');
-const { execPath } = require('process');
 
 const weather = new WeatherApi();
 
@@ -27,10 +26,9 @@ const weather = new WeatherApi();
 
 function secure(app){
   app.locals.docConst = {
-    title: 'WeatherInterface', updated: process.env.npm_package_config_updated,
-    // today: new Intl.DateTimeFormat('ja-JP').format(new Date()),
+    title: 'WeatherAccess', updated: process.env.npm_package_config_updated,
     today: new Date(),
-    weather: 'cloudy', temperature: 5  
+    weather: '-', temperature: '-'
   };
   let form = new Intl.DateTimeFormat('ja-JP', {year: 'numeric', month: '2-digit', day: '2-digit'});
   app.locals.docConst.todayLocale = form.format(app.locals.docConst.today);
@@ -68,11 +66,10 @@ function additional(app){
   app.use('/scripts', Express.static('scripts'));
   app.use('/images', Express.static('images'));
 
-  const fileName = 'tmp/app.log';
-  app.locals.logFileStream = fs.createWriteStream(fileName);
+  app.locals.logFileName = 'tmp/app.log';
 
   app.use('/', (req, res, next) => {
-    app.locals.logFileStream.write(`** FROM ${req.ip} - ${req.ip}\n`);
+    fs.appendFileSync(app.locals.logFileName, `** FROM ${req.ip} - ${req.ip}\n`);
     next();
   });
   app.use(favicon(path.join(__dirname, '../images', 'shiba-puppy.svg')));
@@ -80,17 +77,17 @@ function additional(app){
 
 function routes(app){
   app.get('/', async (req, res) => {
-    if(!app.locals.daily){
+    if(!app.locals.current_weather){
       const d = await fetch('http://localhost:60000/api/today');
       const j = await d.json();
       try{
-        app.locals.daily = Object.assign(j);
+        app.locals.current_weather = Object.assign(j);
       } catch(err) {
         throw new Error(err);
       }
     }
     
-    res.render('index', Object.assign(app.locals.docConst, {cities: weather.citiesList}, app.locals.daily));
+    res.render('index', Object.assign(app.locals.docConst, {cities: weather.citiesList}, app.locals.current_weather));
   });
 
   app.get('/api/d3/sample', (req, res) => {
@@ -115,9 +112,10 @@ function routes(app){
     } else {
       delete opts.daily;
     }
+    delete app.locals.weatherData;
     app.locals.weatherData = Object.assign(opts, req.body);
-    app.locals.logFileStream.write(`** params: ${JSON.stringify(req.body)}\n`);
-    app.locals.logFileStream.write(`** params: ${JSON.stringify(app.locals.weatherData)}\n`);
+    fs.appendFileSync(app.locals.logFileName, `** params: ${JSON.stringify(req.body)}\n`);
+    fs.appendFileSync(app.locals.logFileName, `** params: ${JSON.stringify(app.locals.weatherData)}\n`);
 
     let page = (pug.compileFile('views/plot/sample.pug'))(app.locals.docConst);
     
@@ -136,7 +134,7 @@ function routes(app){
     try{
       weather.setOptions(app.locals.weatherData);
       const url = weather.makeApiUrl();
-      app.locals.logFileStream.write('** url: '+url+'\n');
+      fs.appendFileSync(app.locals.logFileName, '** url: '+url+'\n');
       const jsonData = await weather.accessApi(url);
       res.json(jsonData);
     } catch (err){
@@ -159,16 +157,16 @@ function routes(app){
 
     try{
       const url = weather.makeApiUrl();
-      app.locals.logFileStream.write('** url: '+url+'\n');
+      fs.appendFileSync(app.locals.logFileName, '** url: '+url+'\n');
       const today = await weather.accessApi(url);
-      res.json(Object.assign(today.daily));
+      res.json(Object.assign(today.current_weather, {city: 'Tokyo'}));
     } catch(err) {
-      throw new Error(err);
+      throw err;
     }
   })
   
   app.get((err, req, res, next) => {
-    app.locals.logFileStream.write(`** ERR: ${err.stack}\n`);
+    fs.appendFileSync(app.locals.logFileName, `** ERR: ${err.stack}\n`);
     res.status(500).send('Something broken! and return to top page.');
   })
 }

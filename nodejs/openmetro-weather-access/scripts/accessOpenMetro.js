@@ -2,6 +2,7 @@
 "use strict";
 
 const { application } = require("express");
+const wcTranslation = require('./wc-translation.js');
 
 class WeatherApi {
     constructor(){
@@ -64,6 +65,14 @@ class WeatherApi {
         this.optUser = Object.assign(opts);
     }
 
+    codeToWeather(code){
+        let modcode = code;
+        if(code >= 10){
+            modecode = parseInt(modcode / 10);
+        }
+        return wcTranslation[modcode].abst;
+    }
+
     makeApiUrl(){
         let requestUrl = this.apiUrl + '?';
         const coord = this.coordinates.filter((obj) => obj.city === this.getOptions.city)[0];
@@ -86,10 +95,14 @@ class WeatherApi {
 
     async accessApi(url=this.makeApiUrl()){
         if(!url) throw new Error('Empty ApiUrl. Please check Url params.');
+        
         let res = await fetch(url);
         if(res.statusText !== 'OK') throw new Error(await res.text());
 
-        return Object.assign(await res.json())
+        let data = await res.json();
+        data.current_weather.weather = this.codeToWeather(data.current_weather.weathercode)
+
+        return Object.assign(data);
     }
 }
 

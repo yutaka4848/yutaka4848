@@ -7,7 +7,12 @@ mixin getWeatherIcon(weather)
     include ../weather-icons/rainy
   else if weather == 'cloudy'
     include ../weather-icons/cloudy
+  else if weather == 'stormy'
+    include ../weather-icons/stormy
+  else if weather == 'thunder'
+    include ../weather-icons/thunder
   else if weather == 'moon'
     include ../weather-icons/moon
   else
     p WeatherImage
+    p= weather

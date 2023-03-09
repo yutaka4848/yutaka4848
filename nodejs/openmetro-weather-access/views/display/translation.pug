@@ -7,7 +7,11 @@ mixin toJapanese(w)
     | 雨
   else if weather == 'cloudy'
     | 曇
+  else if weather == 'stormy'
+    | 嵐
+  else if weather == 'thunder'
+    | 雷
   else if weather == 'moon'
     | 月
   else
-    | = weather
+    | weather

@@ -1,0 +1,126 @@
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-08&end_date=2023-03-08&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-08&end_date=2023-03-08&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-08","end_date":"2023-03-15"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-08","end_date":"2023-03-15"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-08&end_date=2023-03-15
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-08&end_date=2023-03-08&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-08","end_date":"2023-03-15"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-08","end_date":"2023-03-15"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-08&end_date=2023-03-15
+** FROM ::1 - ::1
+** FROM ::1 - ::1
+** params: {"hours_days":"daily","city":"Aomori","start_date":"2023-03-08","end_date":"2023-03-15"}
+** params: {"current_weather":true,"wind_speed_unit":"ms","hours_days":"daily","city":"Aomori","start_date":"2023-03-08","end_date":"2023-03-15"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&current_weather=true&wind_speed_unit=ms&hours_days=daily&start_date=2023-03-08&end_date=2023-03-15
+** FROM ::1 - ::1
+** params: {"hours_days":"daily","city":"Aomori","start_date":"2023-03-08","end_date":"2023-03-15"}
+** params: {"daily":["temperature_2m_max","temperature_2m_min","apparent_temperature_max","apparent_temperature_min","rain_sum","showers_sum","snowfall_sum","windspeed_10m_max","windspeed_10m_min"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"daily","city":"Aomori","start_date":"2023-03-08","end_date":"2023-03-15"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,showers_sum,snowfall_sum,windspeed_10m_max,windspeed_10m_min&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=daily&start_date=2023-03-08&end_date=2023-03-15
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-09&end_date=2023-03-09&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Niigata","start_date":"2023-03-09","end_date":"2023-03-10"}
+** params: {"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Niigata","start_date":"2023-03-09","end_date":"2023-03-10"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=37.89&longitude=139.01&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-10
+** FROM ::1 - ::1
+** FROM ::1 - ::1
+** params: {"hours_days":"daily","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** params: {"current_weather":true,"wind_speed_unit":"ms","hours_days":"daily","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&current_weather=true&wind_speed_unit=ms&hours_days=daily&start_date=2023-03-09&end_date=2023-03-16
+** FROM ::1 - ::1
+** params: {"hours_days":"daily","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** params: {"current_weather":true,"wind_speed_unit":"ms","hours_days":"daily","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&current_weather=true&wind_speed_unit=ms&hours_days=daily&start_date=2023-03-09&end_date=2023-03-16
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-09&end_date=2023-03-09&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Niigata","start_date":"2023-03-09","end_date":"2023-03-16"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Niigata","start_date":"2023-03-09","end_date":"2023-03-16"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=37.89&longitude=139.01&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-16
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-09&end_date=2023-03-09&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** FROM ::1 - ::1
+** params: {"hours_days":"daily","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** params: {"daily":["temperature_2m_max","temperature_2m_min","apparent_temperature_max","apparent_temperature_min","rain_sum","showers_sum","snowfall_sum","windspeed_10m_max","windspeed_10m_min"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"daily","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,showers_sum,snowfall_sum,windspeed_10m_max,windspeed_10m_min&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=daily&start_date=2023-03-09&end_date=2023-03-16
+** FROM ::1 - ::1
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** params: {"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-16
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-09&end_date=2023-03-09&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-16"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-16
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-09&end_date=2023-03-09&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-12"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-12"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-12
+** FROM ::1 - ::1
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-11
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-09&end_date=2023-03-09&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-11
+** FROM ::1 - ::1
+** FROM ::ffff:127.0.0.1 - ::ffff:127.0.0.1
+** url: https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,snowfall_sum,windspeed_10m_max&timezone=Asia%2FTokyo&timezone=Asia%2FTokyo&start_date=2023-03-09&end_date=2023-03-09&current_weather=true&wind_speed_unit=ms
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-11
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-11
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-11
+** FROM ::1 - ::1
+** params: {"hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** params: {"hourly":["temperature_2m","cloudcover","windspeed_10m","winddirection_10m","rain","snowfall"],"current_weather":true,"wind_speed_unit":"ms","hours_days":"hourly","city":"Aomori","start_date":"2023-03-09","end_date":"2023-03-11"}
+** FROM ::1 - ::1
+** url: https://api.open-meteo.com/v1/forecast?latitude=40.82&longitude=140.73&hourly=temperature_2m,cloudcover,windspeed_10m,winddirection_10m,rain,snowfall&timezone=Asia%2FTokyo&current_weather=true&wind_speed_unit=ms&hours_days=hourly&start_date=2023-03-09&end_date=2023-03-11

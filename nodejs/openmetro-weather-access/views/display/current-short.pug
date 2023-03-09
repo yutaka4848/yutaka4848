@@ -1,0 +1,27 @@
+div.w-50.border.border-2.border-primary.rounded-4
+  div.row.text-center
+    div.col.pt-0.pb-0
+      h2.fs-2.badge.bg-secondary.border.border-2.border-primary= todayLocale
+      span.fs-4.align-middle= '＠ ' + city
+  div.row
+    div.col
+      div.row
+        div.col.text-center.h-50
+          include ../mixins/getweather
+          +getWeatherIcon(weather)
+      div.row
+        div.col.text-center.fs-2.fw-bold
+          include translation
+          +toJapanese(weather)
+    div.col
+      div.row.p-2
+        div#temp-label.col-4.text-start
+          span.fs-3.badge.bg-secondary 気温
+        div#temp-min.col-8.text-center.fs-3= temperature + '℃'
+      div.row.p-2
+        div#wind-label.col-4.text-start 
+          span.fs-3.badge.bg-secondary 風速
+        div#wind-max.col-8.text-center.fs-3= windspeed + ' m/s'
+        
+
+

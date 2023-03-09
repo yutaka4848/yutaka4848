@@ -1,5 +1,3 @@
-// const { map } = require("d3");
-
 const sampleData = {
   "daily":{
     "time":["2023-02-08","2023-02-09","2023-02-10","2023-02-11","2023-02-12","2023-02-13","2023-02-14","2023-02-15"],
@@ -11,7 +9,6 @@ const sampleData = {
 // Main Method is `run` (search for)
 class WeatherPlot {
   constructor(data=sampleData, xdata=null, ydata=null){
-    console.log('** data: ', data);
     this.data = {x: xdata ? xdata : null, y: ydata ? ydata : null};
     this.data.org = data;
   
@@ -51,13 +48,35 @@ class WeatherPlot {
   set xdata(dataList) { this.data.x = dataList; }
   set ydata(dataList) { this.data.y = dataList; }
 
+  currentTime(){
+    let today = {};
+    today.day = Intl.DateTimeFormat('en-US', {hour12: false, day: 'numeric'}).format(Date.now());
+    today.minute = Intl.DateTimeFormat('en-US', {hour12: false, minute: '2-digit'}).format(Date.now());
+    if(today.minute >= 30){
+      let tmp = Intl.DateTimeFormat('en-US', {hour12: false, hour: 'numeric'}).format(Date.now());
+      tmp = parseInt(tmp) + 1;
+      today.hour = tmp.toString();
+    } else {
+      today.hour = Intl.DateTimeFormat('en-US', {hour12: false, hour: 'numeric'}).format(Date.now());
+    }
+    return today;
+  }
+
   // -- Not set x, y, call this and expect sampleData form
   arrange(){
-    this.xdata = this.data.org.daily.time;
-    this.ydata = [
-      this.data.org.daily.temperature_2m_max, 
-      this.data.org.daily.temperature_2m_min
-    ];
+    if(this.data.org.daily){
+      this.xdata = this.data.org.daily.time;
+      this.ydata = [
+        this.data.org.daily.temperature_2m_max, 
+        this.data.org.daily.temperature_2m_min
+      ];
+    } else if(this.data.org.hourly){
+      this.xdata = this.data.org.hourly.time;
+      this.ydata = [
+        this.data.org.hourly.temperature_2m
+      ];
+
+    }
   }
 
   // Main
@@ -162,11 +181,33 @@ class WeatherPlot {
   // ticks for horizontal axis
   createTicksH(svg){
     if(this.opts.hconf.type === 'datetime'){
-      // simplifying year
-      let modLabels = this.getx.map((date) => {
-        const d = new Date(date);
-        return Intl.DateTimeFormat('ja-JP', {month: '2-digit', day: '2-digit'}).format(d)
-      });
+      // simplifying to only days or hours
+      let modLabels;
+      if(this.data.org.daily){
+        modLabels = this.getx.map((date) => {
+          const d = new Date(date);
+          return Intl.DateTimeFormat('ja-JP', {month: '2-digit', day: '2-digit'}).format(d)
+        });
+      } else if(this.data.org.hourly) {
+        let styleHours = Intl.DateTimeFormat('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
+        let styleDays = Intl.DateTimeFormat('ja-JP', {hour12: false, day: 'numeric'});
+        let days = new Set();
+        modLabels = this.getx.reduce((arr, date, idx) => {
+          if(idx%4==0){
+            const d = new Date(date);
+            if(days.has(styleDays.format(d))){
+              arr.push(styleHours.format(d));
+            } else {
+              days.add(styleDays.format(d));
+              arr.push(styleHours.format(d) + `\n${styleDays.format(d)}`);
+            }
+          } else {
+            arr.push('');
+          }
+          return arr;
+        }, []);
+      }
+
       let gr = svg.append('g').attr('id', 'ticks-h')
                   .attr('transform', `translate(${this.opts.hconf.labelArea} 0)`);
       
@@ -189,9 +230,14 @@ class WeatherPlot {
           .attr('x1', (d, i) => `${this.opts.hconf.labelArea + this.gethdx*i}`)
           .attr('x2', (d, i) => `${this.opts.hconf.labelArea + this.gethdx*i}`)
           .attr('y1', this.opts.vconf.axisLen)
-          .attr('y2', this.opts.vconf.axisLen + this.opts.hconf.tickLen)
+          .attr('y2', (d, i) => d ? this.opts.vconf.axisLen + this.opts.hconf.tickLen : this.opts.vconf.axisLen)
           .attr('stroke', this.opts.text.color)
           .attr('stroke-width', this.opts.text.width);
       }
+  }
+
+  createTodayLine(svg){
+    let today = new Date();
+
   }
 }

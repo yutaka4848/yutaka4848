@@ -37,6 +37,7 @@ html(lang='ja')
               input#end_date.w-50(name='end_date' type='date')
           div.row.p-2
             div.col.d-block
-              button.btn.btn-primary.btn-lg(type='submit', id='DO', form='base-form', (click)='console.log("Hello")') DO
+              button.btn.btn-primary.btn-lg(type='submit', id='DO', form='base-form', (click)='console.log("Hello")') GRAPH
     div
-      include display/short-card
+      //- include display/current
+      include display/current-short
