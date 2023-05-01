@@ -1,5 +1,8 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const path = require('path');
+
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 console.log(__dirname);
 
@@ -7,9 +10,13 @@ module.exports = {
   mode: "production",
   cache: false,
   entry: {
-    clock: "./src/render-clock.jsx",
     chart: "./src/chart.js",
-    emoji: "./src/emoji.jsx"
+    emoji: "./src/emoji.jsx",
+    crypto: "./src/crypto.jsx",
+    micInput: "./src/mic-input.jsx"
+  },
+  resolve: {
+    extensions: [".js", ".jsx", "ts."]
   },
   output:{
     path: path.join(__dirname, "dist"),
@@ -23,6 +30,11 @@ module.exports = {
     compress: true,
     port: 60000,
     historyApiFallback: true
+  },
+  resolve: {
+    fallback: {
+      crypto: false
+    }
   },
   module: {
     rules: [{

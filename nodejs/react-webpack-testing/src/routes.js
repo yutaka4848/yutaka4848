@@ -9,8 +9,6 @@ const express = require('express');
 const helmet = require('helmet');
 const pug = require('pug');
 
-const nonce = require('./nonce.js');
-
 function secure(app){
 
   app.use((req, res, next) => {
@@ -26,7 +24,7 @@ function secure(app){
   app.use(helmet.contentSecurityPolicy({
     directives: {
       "default-src": ["'self'"],
-      "script-src": ["'unsafe-inline'", (req, res) => `'nonce-${app.locals.nonce[0]}'`, "'strict-dynamic'"],
+      "script-src": [(req, res) => `'nonce-${app.locals.nonce[0]}'`, "'strict-dynamic'"],
       "script-src-elem": ["'self'", (req, res) => `'nonce-${app.locals.nonce[1]}'`],
       "style-src": ["'self'"]
     }
@@ -35,6 +33,7 @@ function secure(app){
 
 function routes(app){
   app.set('view engine', 'pug');
+  app.use(express.urlencoded());
 
   app.use('/static', express.static('static'));
   app.use('/dist', express.static('dist'));
@@ -42,28 +41,12 @@ function routes(app){
   // app.set('views', './views'); // pug's default directory is `views`
 
   app.get('/', async (req, res) => {
-    let password = 'Encryption no kotonanka yokuwakaranai';
-    let data = 'kokoga enc shitai data dayo';
-    let algorithm = 'aes-256-cbc', salt = 'salt', bitlen = 32;
-    let encData;
+    console.log('** page load: ', app.locals.nonce[1]);
+    res.render('index.pug', {title: 'Test Some Packages', nonce: app.locals.nonce[0], nonceElem: app.locals.nonce[1]});
+  });
 
-    console.log('** encryption testing...');
-    const keyEn = crypto.scryptSync(password, salt, bitlen);
-    const ivEn = crypto.randomFillSync(new Uint8Array(16));
-    let cipher = crypto.createCipheriv(algorithm, keyEn, ivEn);
-    encData = cipher.update(data, 'utf8', 'hex');
-    encData += cipher.final('hex'); // if not call final, result in error.
-    console.log(`** encdata(final) is ${encData}(${typeof encData})`);
+  app.get('/api/crypt', (req, res) => {
     
-    
-    const keyDe = crypto.scryptSync(password, salt, bitlen);
-    let ivDe = Buffer.alloc(16, 0);
-    let decipher = crypto.createDecipheriv(algorithm, keyDe, ivEn);
-    let decData = decipher.update(encData, 'hex', 'utf8');
-    decData += decipher.final('utf8');
-    console.log(`** decrypted: ${decData}`);
-
-    res.render('index.pug', {title: 'Test Some Packages', nonce: app.locals.nonce[0]});
   });
 
   app.use((err, req, res, next) => {

@@ -35,11 +35,40 @@ HTMLButtonElement.form -> HTMLFormElement
 HTMLFormElement.elements -> HTMLFormControlsCollection
 HTMLFormControlsCollection['name of tag'].value
 
-## :lock: About Crypto :key:
+## About :lock::key: Crypto
 ### NodeJS Crypto package: Encryption and Decryption
 To encrypt and decrypt, you use crypto.createCipheriv and crypto.createDecipheriv. This iv means initialization vector, and __use same iv__ for cipher and decipher.
 ```
 // ivEnc == ivDec is true
 let cipher = crypto.createCipheriv(algorithm, key, ivEnc);
 let decipher = crypto.createDecipheriv(algorithm, key, ivDec);
+```
+
+
+## About :speaker::microphone: Web Audio APIs(Front-End APIs)
+### Get Media Device Input(mainly for Audio)
+```
+let stream = navigator.mediaDevices.getUserMedia();
+let context = new AudioContext();
+
+let analyzer = context.createAnalyser();
+let stream_node = context.createMediaStreamSource(stream);
+
+stream_node.connect(analyser);
+
+let binSize = analyser.frequencyBinCount // = analyser.fftSize / 2
+
+// for ByteArray
+let byteFreq = new Uint8Array(binSize);
+let byteTD = new Uint8Array(binSize);
+analyser.getByteFrequencyData(byteFreq); 
+analyser.getByteTimeDomainData(byteTD); 
+
+// for FloatArray
+let byteFreq = new Float32Array(binSize);
+let byteTD = new Float32Array(binSize);
+analyser.getFloatFrequencyData(byteFreq); 
+analyser.getFloatTimeDomainData(byteTD); 
+
+
 ```

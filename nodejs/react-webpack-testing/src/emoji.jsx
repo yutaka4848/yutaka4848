@@ -26,7 +26,7 @@ class EmojiSearch extends React.Component {
     const number = this.state.code.replaceAll(drop, '');
     if(number.length !== 6) return 'Invalid Code';
     span.innerHTML = `&#${number};`;
-    console.log(`** ${JSON.stringify(this.props)}`);
+    
     return span.innerHTML;
   }
 
