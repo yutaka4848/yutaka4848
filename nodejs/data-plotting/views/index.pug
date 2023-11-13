@@ -1,0 +1,14 @@
+html 
+    head 
+        include head/head.pug
+    body 
+        header 
+            h1.text-center.bg-info Data Visualization from OpenData of Japan
+
+        main.container
+            div.row
+                div#chart_params.col.m-2.rounded.border
+                    script(src="/lib/create_form.js" nonce= nocne1)
+                div.col
+                    canvas(id="chart_field" width=640 height=480)
+

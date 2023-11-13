@@ -1,0 +1,44 @@
+.shape_arrow {
+    width: 50px;
+    height: 25px;
+    position: relative;
+    padding: 0;
+}
+
+.shape_arrow_body{
+    width: 30px;
+    height: 10px;
+    position: absolute;
+    top: 10px;
+    background-color: skyblue;
+}
+
+.shape_arrow_head {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.right_head {
+    left: 28px;
+    border-left: 30px solid;
+    border-color: skyblue;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.left_body {
+    width: 27px;
+    top: 10px;
+    left: 30px;
+    background-color: skyblue;
+}
+
+.left_head {
+    border-right: 30px solid;
+    border-color: skyblue;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
