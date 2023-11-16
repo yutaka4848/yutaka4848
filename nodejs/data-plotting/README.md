@@ -80,7 +80,7 @@
         let your_class = new module.your_class()
     })
     ```
-- **NOTICE** At babel transpiling, transform `import` to `require`
+- **NOTICE** At babel transpiling, transform `import` to `require`?
     - At `babel.config.json`
     ```
         {
@@ -102,49 +102,3 @@
     }
     ```
 
-## Personal Memo
-- Dev process?
-    1. レンダリング前で用意しておくデータリスト
-    2. 用意したデータリストからユーザーに選択してもらう
-    3. 選択したデータを `fetch`
-    4. 読み込んだデータを処理、表示
-- In `csv-parser`, sync and stream (or others) existing.
-    - 最初にsyncで作ってしまったが、途中でstreamの使い方が(中途半端に)わかったので、そちらで作ろうとしている？
-        1. そのためには大きく書き換えることになる
-            - 無駄にしたくないので、sync形式で書いたものも残したい
-                - デザインパターンfactory形式で、関数からいずれかを振り分ける形式にできる？
-        2. メソッド間でデータのやり取りをどうするか
-        3. `stream.on`でイベント形式で処理する場合、処理の終わりをどうやって伝えて、次の処理をどうやってスタートするかよくわかっていない
-        4. streamで逐次データ処理とエラーハンドリングを期待している
-    - callback形式の方が書き換える量は少ない？
-    - 🎗️データの前処理(データフォーマットの指定)とparse-syncのオプションでコントロールする
-        - format
-
-            | | field1 | field2 | ... |
-            | :---: | --- | --- | --- |
-            | 2023-11-07 | 1 | 2 | ... |
-
-        - csv-parsed
-        ```
-        {
-            "": [ "", "2023-11-07" ],
-            "field1": 15645,
-            "field2": 9897,
-            .
-            .
-            .
-        }
-        ```
-        - Fill `field1, field2, ...` if field_name is empty
-        - Premise: [csv-parse](#data-parse)
-
-
-## Directories
-data-plotting
-
-| name | desc |
-| :--  | :--  |
-| main | mainly for nodejs frameworks (serverside libraries) |
-| lib | script by JavaScript and transpiled from react by babel |
-| src | JSX style script of react |
-| views | pug style static html |
